@@ -33,9 +33,14 @@ fun main() {
         }
 
         // 기능 3 : 숫자 변환 및 합계 계산
+        // 기능 4 : 예외처리 (음수거나 구분된 문자열이 숫자가 아닐 시 오류)
         for (number in numbers){
-            number.toIntOrNull()?.let { num ->
+            val num = number.toIntOrNull()
+            if (num != null && num >= 0){
                 result += num
+            }
+            else{
+                throw IllegalArgumentException()
             }
         }
         println("결과 : $result")
