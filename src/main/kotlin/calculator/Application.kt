@@ -31,5 +31,14 @@ fun main() {
         else{
             numbers = input.split(",", ":")
         }
+
+        // 기능 3 : 숫자 변환 및 합계 계산
+        for (number in numbers){
+            number.toIntOrNull()?.let { num ->
+                result += num
+            }
+        }
+        println("결과 : $result")
+        break
     }
 }
